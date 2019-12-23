@@ -27,7 +27,7 @@ const formatTime = async(d) => {
       h = d.getHours() > 11 ? d.getHours() - 12 : d.getHours(),
       m = d.getMinutes()
   try {
-    switch ((m % 5) >= 2.5 ? parseInt(m / 5) * 5 + 5 : parseInt(m / 5) * 5) {
+    switch (parseInt((m % 5) >= 2.5 ? parseInt(m / 5) * 5 + 5 : parseInt(m / 5) * 5)) {
       case 0:
         res = [...res,...hours[h],116,117,118];
         break;
