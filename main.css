@@ -32,6 +32,11 @@ span {
   text-shadow: 0 0 8px #ffffff;
 }
 
+h1 {
+  display: none;
+}
+
 input {
   width: 50rem;
+  display: none;
 }
