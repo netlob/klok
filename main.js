@@ -21,9 +21,9 @@ var hours = {
   12: [108,109,110,111,112,113]
 }
 
-const formatTime = async(d) => {
+const formatTime = async(i) => {
   var res = [0,1,2,4,5],
-      d = new Date(d),
+      d = new Date(i),
       h = d.getHours() > 11 ? d.getHours() - 12 : d.getHours(),
       m = d.getMinutes()
   try {
