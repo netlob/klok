@@ -40,3 +40,20 @@ input {
   width: 50rem;
   display: none;
 }
+
+
+@media screen and (max-width: 1000px) {
+  .grid {
+    width: 95vw;
+    height: 95vw;
+    margin-top: 0;
+  }
+
+  span {
+    font-size: 5vw;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
