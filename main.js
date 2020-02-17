@@ -1,4 +1,4 @@
-var data = {
+const data = {
   dutch: {
     letters: "HETKISAVIJF TIENATZVOOR OVERMEKWART HALFSPMOVER VOORTHGEENS TWEEAMCDRIE VIERVIJFZES ZEVENONEGEN ACHTTIENELF TWAALFPMUUR",
     base: [0, 1, 2, 4, 5],
@@ -71,13 +71,13 @@ var data = {
   }
 };
 
-for (var i = 0; i < data[language].letters.length; i++) {
+for (let i = 0; i < data[language].letters.length; i++) {
   if (data[language].letters[i] == " ") continue;
   document.querySelector(".grid").innerHTML += `<span id="${i}" class="inactive">${data[language].letters[i]}</span>`;
 }
 
 const formatTime = async (i) => {
-  var res = data[language].base,
+  let res = data[language].base,
     d = new Date(i),
     h = d.getHours() > 11 ? d.getHours() - 12 : d.getHours(),
     m = d.getMinutes(),
