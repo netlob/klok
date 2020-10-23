@@ -1,15 +1,18 @@
 <html>
 
 <head>
+  <link rel="stylesheet" type="text/css" href="./bootstrap-reboot.min.css">
   <link rel="stylesheet" type="text/css" href="./main.css">
+
 </head>
 
 <body>
-  <center>
-    <input type="range" min="0" max="1440" value="720" onchange="set(this.value)">
-    <h1></h1>
-    <div class="grid"></div>
-  </center>
+  <div class="center">
+    <input type="range" min="0" max="1440" value="720" onchange="set(this.value)" class="debug d-none">
+    <!-- debug scroller -->
+    <h1 class="d-none"></h1>
+    <div class="grid center"></div>
+  </div>
   <script>
     var language = "dutch"
   </script>

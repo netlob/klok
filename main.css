@@ -9,8 +9,14 @@ body {
   background: #222222;
   color: #eee;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.2;
 }
 
+.center{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
@@ -32,17 +38,15 @@ span {
   color: rgba(255, 255, 255, 0.2);
 }
 
-.active {
+.active, .init {
   color: rgba(255, 255, 255, 1);
   text-shadow: 0 0 8px #ffffff;
 }
 
-h1 {
-  display: none;
-}
-
 input {
   width: 50rem;
+}
+.d-none {
   display: none;
 }
 
@@ -51,7 +55,7 @@ input {
   .grid {
     width: 95vw;
     height: 95vw;
-    margin-top: 0;
+    margin: auto;
   }
 
   span {
