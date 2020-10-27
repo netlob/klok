@@ -1,3 +1,4 @@
+const debug = false;
 const data = {
   dutch: {
     letters: "HETKISAVIJF TIENATZVOOR OVERMEKWART HALFSPMOVER VOORTHGEENS TWEEAMCDRIE VIERVIJFZES ZEVENONEGEN ACHTTIENELF TWAALFPMUUR",
@@ -71,18 +72,25 @@ const data = {
   }
 };
 
+if (debug) {
+  for (i of document.getElementsByClassName("debug")) { i.classList.remove("d-none") };
+}
+
 for (let i = 0; i < data[language].letters.length; i++) {
   if (data[language].letters[i] == " ") continue;
   document.querySelector(".grid").innerHTML += `<span id="${i}" class="inactive">${data[language].letters[i]}</span>`;
 }
 
+//base stays constantly active
+data[language].base.forEach(i => document.getElementById(i).classList = "init");
+
 const formatTime = async (i) => {
-  let res = data[language].base,
+  let 
     d = new Date(i),
     h = d.getHours() > 11 ? d.getHours() - 12 : d.getHours(),
     m = d.getMinutes();
   m = parseInt((m % 5) >= 2.5 ? parseInt(m / 5) * 5 + 5 : parseInt(m / 5) * 5);
-  return [...res, ...data[language].hours[m > data[language].next ? h + 1 : h], ...data[language].minutes[m]];
+  return [...data[language].hours[m > data[language].next ? h + 1 : h], ...data[language].minutes[m]];
 }
 
 const run = (d) => {
@@ -95,4 +103,6 @@ const run = (d) => {
 
 const set = (val) => run(new Date(`December 7 2003 ${Math.floor(val / 60)}:${val - (Math.floor(val / 60) * 60)}`));
 
-setInterval(() => run(new Date()), 1000);
+run(new Date());
+setInterval(() => run(new Date()), 10000);
+
